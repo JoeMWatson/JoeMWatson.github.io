@@ -5,9 +5,9 @@ permalink:           pretty
 relative_permalinks: true
 
 # Setup
-title:               Poole
-tagline:             The Jekyll Butler
-url:                 http://getpoole.com
+title:               Sold-state
+tagline:             Blog
+url:                 http://joemwatson.github.io./m
 paginate:            1
 baseurl:             "http://joemwatson.github.io./"
 
