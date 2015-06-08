@@ -5,8 +5,8 @@ permalink:           pretty
 relative_permalinks: true
 
 # Setup
-title:               Sold-state
-tagline:             Blog
+title:               Some kind of future
+tagline:             A journal
 url:                 http://joemwatson.github.io./m
 paginate:            1
 baseurl:             "http://joemwatson.github.io./"
