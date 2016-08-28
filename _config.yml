@@ -5,7 +5,7 @@ title: Jackal               # used for the html title of every page
 desc: >
   Personal Blog of Joe Watson
 
-url: http://joemwatson.github.io./  # put your website hosting url here
+url: http://joemwatson.github.io    # put your website hosting url here
 baseurl: ''                         # the subpath of your site, e.g. /blog
 permalink: /:year/:title/           # how should we display posts url
 
