@@ -1,6 +1,6 @@
 ---
-title: My first post
-desc: This is a sample for my first post.
+title: Gaussian Processes
+desc: Non-Parawhatnow?
 ---
 
 ## Stricto nitar
