@@ -141,18 +141,9 @@ p.post-desc {
 
   p {
     font-weight: bold;
-    //border-bottom: 5px solid $brand-light-color;
-    //padding-bottom: $spacer0;
-    &:after{
-      //position:absolute; 
-      //left:0; 
-      //bottom:0;
-      //width:100%;
-      //height:1px; 
-      border-bottom: 5px solid $brand-light-color;
-      padding-bottom: $spacer0;
-      //content:"";
-    }
+    white-space: nowrap;
+    border-bottom: 5px solid $brand-light-color;
+    padding-bottom: $spacer0;
     &:hover,
     &:focus {
       text-decoration: none;
