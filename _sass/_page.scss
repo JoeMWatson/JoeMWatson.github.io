@@ -145,7 +145,12 @@ p.post-desc {
     //white-space: nowrap;
     //border-bottom: 5px solid $brand-light-color;
     //padding-bottom: $spacer0;
-    &:hover,
+    &:hover {
+      &::after {
+        text-decoration: none;
+        border-bottom-color: $brand-color;
+      }
+    }
     &:focus {
       &::after {
         text-decoration: none;
