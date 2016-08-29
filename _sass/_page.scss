@@ -142,18 +142,19 @@ p.post-desc {
     font-weight: bold;
     display: inline-block;
     position: relative;
+    padding-bottom: $spacer0;
     //white-space: nowrap;
     //border-bottom: 5px solid $brand-light-color;
     //padding-bottom: $spacer0;
     &:after {
       content:"";
-      //position: absolute;
-      //left: 0;
-      //display: inline-block;
+      position: absolute;
+      left: 0;
+      display: inline-block;
       //height: 1em;
       //width: 100%;
       border-bottom: 5px solid $brand-light-color;
-      padding-bottom: $spacer0;
+      
       
     }
     &:hover,
