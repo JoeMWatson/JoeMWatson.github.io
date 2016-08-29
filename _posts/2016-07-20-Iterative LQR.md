@@ -1,6 +1,6 @@
 ---
-title: Another post
-desc: Showing another post. How fancy.
+title: Iterative LQR
+desc: Because LQR needs to be more complicated.
 ---
 
 ## Mersaeque diversa quoque utque cum et

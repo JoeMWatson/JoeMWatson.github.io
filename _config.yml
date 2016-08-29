@@ -1,7 +1,7 @@
 # The main config file for your Jekyll template
 
 # Site settings
-title: Jackal               # used for the html title of every page
+title: Muted Winter               # used for the html title of every page
 desc: >
   Personal Blog of Joe Watson
 
@@ -14,7 +14,9 @@ email: joewatson125@gmail.com
 author: Joe Watson
 #twitter_username: clenemt
 github_username: JoeMWatson
-#github_source: jackal
+github_source: jackal
+#instagram_username:
+#linkedin_username:
 
 # Put your ga tracking code below
 #google_analytics: 'UA-XXXXXXXX-X'
