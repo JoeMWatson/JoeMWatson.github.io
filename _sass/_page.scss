@@ -154,10 +154,10 @@ p.post-desc {
       height: 1.5em;
       width: 100%;
       border-bottom: 5px solid $brand-light-color;
-      
-      
     }
-    &:hover,
+    &:hover {
+      border-bottom-color: $brand-color;
+    }
     &:focus {
       text-decoration: none;
       border-bottom-color: $brand-color;
