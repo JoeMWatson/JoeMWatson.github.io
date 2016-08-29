@@ -128,6 +128,7 @@ p.post-desc {
 }
 
 // PAGE WORK & PROJECTS ====================================
+// maybe try <p><a>
 
 .project {
   margin-right: $spacer;
@@ -137,11 +138,16 @@ p.post-desc {
 .project-title {
   margin-bottom: $spacer1;
 
-  a {
+ p a {
     font-weight: bold;
-    white-space: nowrap;
-    border-bottom: 5px solid $brand-light-color;
-    padding-bottom: $spacer0;
+    //white-space: nowrap;
+    //border-bottom: 5px solid $brand-light-color;
+    //padding-bottom: $spacer0;
+    &:after{
+      border-bottom: 5px solid $brand-light-color;
+      padding-bottom: $spacer0;
+    }
+    }
     &:hover,
     &:focus {
       text-decoration: none;
