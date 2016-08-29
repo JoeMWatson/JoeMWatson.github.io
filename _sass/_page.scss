@@ -147,11 +147,11 @@ p.post-desc {
     //padding-bottom: $spacer0;
     &:after {
       content:"";
-      position: absolute;
-      left: 0;
-      display: inline-block;
-      height: 1em;
-      width: 100%;
+      //position: absolute;
+      //left: 0;
+      //display: inline-block;
+      //height: 1em;
+      //width: 100%;
       border-bottom: 5px solid $brand-light-color;
       padding-bottom: $spacer0;
       
@@ -159,7 +159,7 @@ p.post-desc {
     &:hover,
     &:focus {
       text-decoration: none;
-      border-bottom-color: $brand-secondary;
+      border-bottom-color: $brand-color;
     }
   }
 }
