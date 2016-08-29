@@ -128,8 +128,6 @@ p.post-desc {
 }
 
 // PAGE WORK & PROJECTS ====================================
-//p{position:relative; display:inline}
-//p:after{}
 
 .project {
   margin-right: $spacer;
@@ -139,7 +137,7 @@ p.post-desc {
 .project-title {
   margin-bottom: $spacer1;
 
-  p {
+  a {
     font-weight: bold;
     white-space: nowrap;
     border-bottom: 5px solid $brand-light-color;
@@ -147,7 +145,7 @@ p.post-desc {
     &:hover,
     &:focus {
       text-decoration: none;
-      border-bottom-color: $brand-color;
+      border-bottom-color: $brand-secondary;
     }
   }
 }
