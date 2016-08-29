@@ -15,7 +15,6 @@ Robotics | Code | Design
 {::nomarkdown} 
 <figure class="site-profile">
     <img src="{{ site.baseurl }}/assets/img/profile.jpg">
-    <align="left">
 </figure>
 {:/}
 I recently completed my Master's in Infomration Engineering at the Unviersity of Cambridge. I'm currently helping [Cambridge Medical Robotics](http://murmure.org/.html) carry out their awesome work and learn how to do proper engineering in the process.
