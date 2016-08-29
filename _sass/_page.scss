@@ -146,6 +146,7 @@ p.post-desc {
     &:after {
       border-bottom: 5px solid $brand-light-color;
       padding-bottom: $spacer0;
+      content:""
     }
     &:hover,
     &:focus {
