@@ -146,17 +146,16 @@ p.post-desc {
     //border-bottom: 5px solid $brand-light-color;
     //padding-bottom: $spacer0;
     &:hover {
+      color: $brand-light-color;
       text-decoration: none;
       &::after {
-        text-decoration: none;
-        border-bottom-color: $brand-color;
+        border-bottom-color: $brand-secondary;
       }
     }
     &:focus {
       text-decoration: none;
       &::after {
-        text-decoration: none;
-        border-bottom-color: $brand-color;
+        border-bottom-color: $brand-secondary;
       }
     }
     &::after {
