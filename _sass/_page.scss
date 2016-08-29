@@ -142,18 +142,13 @@ p.post-desc {
     font-weight: bold;
     display: inline-block;
     position: relative;
-    padding-bottom: $spacer0;
     //white-space: nowrap;
     //border-bottom: 5px solid $brand-light-color;
     //padding-bottom: $spacer0;
-    &:hover {
-      text-decoration: none;
-      border-bottom-color: $brand-color;
-    }
+    &:hover,
     &:focus {
-      text-decoration: none;
-      border-bottom-color: $brand-color;
       &::after {
+        text-decoration: none;
         border-bottom-color: $brand-color;
       }
     }
@@ -165,6 +160,7 @@ p.post-desc {
       height: 1.5em;
       width: 100%;
       border-bottom: 5px solid $brand-light-color;
+      padding-bottom: $spacer0;
     }
   }
 }
