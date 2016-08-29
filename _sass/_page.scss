@@ -146,12 +146,14 @@ p.post-desc {
     //border-bottom: 5px solid $brand-light-color;
     //padding-bottom: $spacer0;
     &:hover {
+      text-decoration: none;
       &::after {
         text-decoration: none;
         border-bottom-color: $brand-color;
       }
     }
     &:focus {
+      text-decoration: none;
       &::after {
         text-decoration: none;
         border-bottom-color: $brand-color;
