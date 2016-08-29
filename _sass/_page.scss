@@ -168,15 +168,15 @@ p.post-desc {
 
 .site-profile {
   float: left;
-  width: 115.2px;
-  height: 299px;
+  width: 144px;
+  height: 373.5px;
   margin: 0 1rem 0 $spacer; // -.4rem 1rem 0 $spacer
 }
 
 @include mq-up(md) {
   .site-profile {
     width: 115.2px;
-    height: 299px; //249
-    margin: 0 1rem 0 0; // -1.2rem 1rem 0 2rem left
+    height: 373.5px; //249
+    margin: .5rem 1rem 0 0; // -1.2rem 1rem 0 2rem left
   }
 }
