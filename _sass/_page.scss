@@ -146,7 +146,18 @@ p.post-desc {
     //white-space: nowrap;
     //border-bottom: 5px solid $brand-light-color;
     //padding-bottom: $spacer0;
-    &:after {
+    &:hover {
+      text-decoration: none;
+      border-bottom-color: $brand-color;
+    }
+    &:focus {
+      text-decoration: none;
+      border-bottom-color: $brand-color;
+      &::after {
+        border-bottom-color: $brand-color;
+      }
+    }
+    &::after {
       content:"";
       position: absolute;
       left: 0;
@@ -154,13 +165,6 @@ p.post-desc {
       height: 1.5em;
       width: 100%;
       border-bottom: 5px solid $brand-light-color;
-    }
-    &:hover {
-      border-bottom-color: $brand-color;
-    }
-    &:focus {
-      text-decoration: none;
-      border-bottom-color: $brand-color;
     }
   }
 }
