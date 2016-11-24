@@ -190,8 +190,8 @@ p.post-desc {
 .site-profile {
   float: left;
   width: 150px;
-  height: 390px;
-  margin: 0 1rem 0 $spacer; // -.4rem 1rem 0 $spacer
+  height: 350px; // 390
+  margin: 0 1rem 0 $spacer; // -4rem 1rem 0 $spacer
 }
 
 @include mq-up(md) {
