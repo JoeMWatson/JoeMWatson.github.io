@@ -1,7 +1,7 @@
 # The main config file for your Jekyll template
 
 # Site settings
-title: Muted Winter               # used for the html title of every page
+title: Random Fields            # used for the html title of every page
 desc: >
   Personal Blog of Joe Watson
 
@@ -38,6 +38,9 @@ navigation:
   - title: Paper Notes
     url: /notes/
     desc: Notes on interesting research
+  - title: Robots
+    url: /robots/
+    desc: Domo Arigato Mr Roboto
   - title: About
     url: /about/
     desc: Self explanatory 
