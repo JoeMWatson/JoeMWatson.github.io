@@ -29,6 +29,7 @@
 </script>
 <!-- Fonts -->
 <link href="https://fonts.googleapis.com/css?family=Crimson+Text|Questrial&display=swap" rel="stylesheet">
+
 <style>
   a { color: #5579bd; }
 body {
@@ -38,6 +39,14 @@ body {
 h1, h2, h3, h4, h5, h6 {
   line-height: 1rem;
   color: #0000FF;
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 50%;
 }
 
 </style>
@@ -60,7 +69,7 @@ h1,h2,h3{line-height:1.2}
 
 <p>
     
-    <a href=files/CV.pdf>cv</a> /
+    <a href=files/cv.pdf>cv</a> /
     <a href=blog.html>blog</a> / 
     <a href=https://twitter.com/JoeMWatson>twitter</a> / 
     <a href=https://github.com/JoeMWatson>github</a> /
@@ -71,25 +80,74 @@ working in the <a href="https://www.ias.informatik.tu-darmstadt.de/">IAS Group</
 </p>
 
 <h2>Research Interests</h2>
-<p> robotics, optimal control, Bayesian machine learning </p>
+<p>robotics, optimal control, approximate inference, system identification</p>
 
-<h2>Publications</h2>
+<h2>Research Highlights</h2>
 
-<b>Stochastic Optimal Control as Approximate Input Inference</b><br>
-Watson, J., Abdulsamad, H., Peters, J. (2019)<br>
-Conference on Robot Learning (CoRL) <a href="https://www.ias.informatik.tu-darmstadt.de/uploads/Team/JoeWatson/Watson19I2c.pdf">pdf</a>
-<br><br>
-<b>Real-World, Real-Time Robotic Grasping with Convolutional Neural Networks</b><br>
-Watson, J., Hughes, J., Iida F. (2017)
-<br>
-In 18th Towards Autonomous Robotic Systems (TAROS) Conference <a href="https://link.springer.com/chapter/10.1007/978-3-319-64107-2_50">link</a> 
+<div class="row">
+<div class="col">
+  <img src="files/dcp_10s.gif" width="300px"/>
+</div>
+<div class="col">
+<b>Stochastic Control as Approximate Input Inference</b><br>
+Watson, J., Abdulsamad, H., Findeisen, R., Peters, J. (2021)<br>
+Submitted to IEEE Transactions on Automatic Control 
+(<a href="https://arxiv.org/abs/2105.07693">preprint</a>,
+<a href="https://www.ias.informatik.tu-darmstadt.de/uploads/Team/JoeWatson/Watson19I2c.pdf">code</a>)
+</div>
+</div>
+<div class="row">
+<div class="col">
+  <img src="files/aabi.gif" width="300px"/>
+</div>
+<div class="col">
+<b>Neural Linear Models with Gaussian Process Priors</b><br>
+Watson, J.*, Lin, J. A.*, Klink, P., Peters, J. (2021)<br>
+Advances in Approximate Bayesian Inference (AABI)
+(<a href="https://openreview.net/forum?id=BhaTCbceYDX">openreview</a>)
+</div>
+</div>
+<div class="row">
+<div class="col">
+  <img src="files/ldbll.gif" width="300px"/>
+</div>
+<div class="col">
+<b>Latent Derivative Bayesian Last Layer Networks</b><br>
+Watson, J.*, Lin, J. A.*, Klink, P., Pajarinen, J., Peters, J. (2021)<br>
+Artificial Intelligence and Statistics (AISTATS)
+(<a href="https://www.ias.informatik.tu-darmstadt.de/uploads/Team/JoeWatson/AISTATS21.pdf">pdf</a>)
+</div>
+</div>
+<div class="row">
+<div class="col">
+    <img src="files/diffrnea.gif" width="300px"/>
+</div>
+<div class="col">
+<b>A Differentiable Newton-Euler Algorithm for Real-World Robotics</b><br>
+Lutter, M., Silberbauer, J., Watson, J., Peters, J. (2021)<br>
+Submitted to IEEE Transactions on Robotics
+(<a href="https://www.ias.informatik.tu-darmstadt.de/uploads/Team/JoeWatson/Watson19I2c.pdf">preprint</a>)
+</div>
+</div>
+<div class="row">
+<div class="col">
+    <img src="files/rrc.gif" width="300px"/>
+</div>
+<div class="col">
+<b>Benchmarking Structured Policies and Policy Optimization for Real-World Dexterous Object Manipulation</b><br>
+Funk, N., Schaff, C., Madan, R., Yoneda, T., Urain de Jesus, J., Watson, J., Gordon, E. K., Widmaier, F., Bauer, S., Srinivasa, S. S., Bhattacharjee, T., Walter, M. R., Peters, J. (2021)<br>
+IEEE Robotics and Automation Letters, Special Issue: Robotic Grasping and Manipulation Challenges and Progress
+(<a href="https://arxiv.org/abs/2105.02087">preprint</a>)
+</div>
+</div>
+
+See <a href=https://scholar.google.com/citations?user=xLtXIZAAAAAJ&hl=en>Google Scholar</a> for the rest.
 
 <h2>Further Links</h2>
 <p>
     <a href="https://www.researchgate.net/profile/Joe_Watson8">researchgate</a></li> /
     <a href=https://www.mendeley.com/profiles/joe-watson3/>mendeley</a></li> /
-    <a href="https://www.linkedin.com/in/joe-watson-767a64105">linkedin</a></li> /
-    <a href="https://www.instagram.com/jmw125/">instagram</a></li>
+    <a href="https://www.linkedin.com/in/joe-watson-767a64105">linkedin</a></li>
 </p>
 
 <h2>Contact Information</h2>
@@ -97,14 +155,18 @@ In 18th Towards Autonomous Robotic Systems (TAROS) Conference <a href="https://l
 Room E226, Building S2|02<br>
 TU Darmstadt, FG IAS<br>
 Hochschulstr. 10, 64289 Darmstadt<br> 
-<span style="font-family:'Lucida Console', monospace;">{surname}@ias.informatik.tu-darmstadt.de</span></br>
+<span style="font-family:'Lucida Console', monospace;">{firstname}.{surname}@tu-darmstadt.de</span></br>
 </p>
 
 <p>
 <script>
-var m = "Last updated: " + document.lastModified;
-var p = m.length-8;
-document.write(m.substring(p, 0));
+var date = new Date(document.lastModified);
+var dd = date.getDate();
+var mm = date.getMonth() + 1; 
+var yyyy = date.getFullYear();
+var m = "Last updated: " + dd + ' / ' + mm + ' / ' + yyyy;
+// var p = m.length-8;
+document.write(m);
 </script>
 </p>
 </body>
