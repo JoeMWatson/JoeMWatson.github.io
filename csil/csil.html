@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<head>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta name="author" content="Anonymous">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <link rel="icon" type="image/svg+xml" href="files/favicon.svg">
+  <link rel="icon" type="image/png" href="files/favicon.png">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Coherent Soft Imitation Learning</title>
+  <link rel="stylesheet" href="./files/main.css">
+  <link rel="stylesheet" href="./files/font.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap" rel="stylesheet"> 
+  <link href='https://fonts.googleapis.com/css?family=DM Sans' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
+  <link rel="stylesheet" href="./files/css/academicons.min.css"/>
+  <script src="https://kit.fontawesome.com/ade16df02c.js" crossorigin="anonymous"></script>
+
+  <style>
+
+     :root {
+      --dmblue: #2052CE;
+      --dmpink: #E65E6E;
+      --dmgreen: #6FD3C8;
+    }
+
+    .logo-container {
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+    }
+
+    .logo-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .logo {
+        height: 3em;
+        width: auto;
+        margin: 1%;
+    }
+
+    ol {
+      color: var(--dmpink);
+      border:  1px solid var(--dmpink);
+      border-radius: 5px;
+      padding: 5px 0px 0px 25px;
+      margin: 0px;
+      width: 25em;
+    }
+
+    body {
+        color: var(--dmblue);
+        font-family: "DM Sans";
+        /*font-size: 1.5em;*/
+        height:  0.1;
+        letter-spacing: normal;
+        text-transform: none;
+        text-shadow: none;
+        word-wrap: break-word;
+        text-align: right;
+    }
+
+    h1, h2 {
+        font-family: "DM Sans";
+        font-size: 1.5em;
+        line-height: 2em;
+        padding-bottom: 0.5em;
+        height:  0.1;
+        letter-spacing: normal;
+        text-transform: none;
+        text-shadow: none;
+        word-wrap: break-word;
+        text-align: left;
+    }
+    h2 {
+        color: var(--dmblue);
+    }
+
+    h1 {
+        color: var(--dmblue);
+        font-size: 1.75em;
+        line-height: 2em;
+    }
+    p {
+    font-family: 'Crimson Text', "Recession TwentySeventeen", "Palatino Linotype", "Book Antiqua", Palatino, FreeSerif, serif;
+    color: #000000;
+    text-align: left;
+    font-style: regular;
+    font-weight: normal;
+    font-size: 1.5em;
+    line-height: 1.5em;
+    }
+
+    .text-cell {
+    font-family: 'Crimson Text', serif;
+    color: #000000;
+    text-align: left;
+    font-style: regular;
+    font-weight: normal;
+    font-size: 1.5em;
+    line-height: 1.5em;
+    }
+
+    .video-cell {
+      font-family: 'Roboto Mono';
+      color: var(--dmgreen);
+      font-size: 1.1em;
+/*      line-height : 2em;*/
+      text-align: center;
+      font-style: regular;
+      font-weight: normal;
+      vertical-align: middle;
+      margin: 0;
+      padding-bottom: 1.2em;
+      padding-top: 1em;
+      padding-left: auto;
+      padding-right: auto;
+    }
+
+
+    td {
+      text-align: left;
+/*      box-sizing:border-box;*/
+/*      display:block;*/
+      width:40%;
+/*      margin-left: auto;*/
+/*      margin-right: auto;*/
+    }
+
+    tr {
+      valign: center;
+    }
+
+    table {
+      padding: 0;
+      margin: 0;
+/*      box-sizing: border-box;*/
+    }
+
+    button {
+    display:inline-block;
+    text-decoration:none;
+    color:var(--dmpink);
+    font-weight:bold;
+    min-width:132px;
+    min-height:37px;
+    border:1px solid black;
+    border-radius:12px;
+    text-align:center;
+    border-color: var(--dmpink);
+    /*background-color:gray;*/
+    margin:10px;
+    }
+
+    * {padding:0;margin:0;box-sizing:border-box;}
+    #video {
+      position: relative;
+      padding-bottom: 45%; /* 16:9 */
+      height: 0;
+    }
+    #video iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 80%;
+      height: 100%;
+      transform: translateX(12.5%);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: inherit;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .link {
+      /*color: #0066CC;*/
+      color: #bb2222;
+      /*color: #882222;*/
+      text-decoration: none;
+    }
+    .link:hover {
+      text-decoration: underline;
+    }
+    .nounderline:hover {
+      text-decoration: none;
+    }
+
+    .link2 {
+      color: #0055AA;
+      /*color: #882222;*/
+      /*color: #882222;*/
+      text-decoration: none;
+    }
+    .link2:hover {
+      text-decoration: underline;
+    }
+
+    .center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 50%;
+}
+
+  </style>
+
+  <style type="text/css">/**
+     * Style sheet used by new LibX tooltip code
+     */
+
+    /* We insert a <div> with libx-tooltip style under the body.
+     * This will inherit body's style - we can't afford to inherit undesirable 
+     * styles and we must redefine what we need.  OTOH, some things, e.g.
+     * font-size, might be ok to be inherited to stay within the page's tone.
+     */
+    .libx-tooltip {
+        display: none;
+        overflow: visible;
+        padding: 5px;
+        z-index: 100;
+        background-color: #eee;
+        color: #000;
+        font-weight: normal;
+        font-style: normal;
+        text-align: left;
+        border: 2px solid #666;
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+    }
+
+    .libx-tooltip p {
+        /* override default 1em margin to keep paragraphs inside a tooltip closer together. */
+        margin: .2em;
+    }
+    </style><style type="text/css">/**
+     * Style sheet used by LibX autolinking code
+     */
+    .libx-autolink {
+    }
+
+/* 
+Max width before this PARTICULAR table gets nasty
+This query will take effect for any screen smaller than 760px
+and also iPads specifically.
+*/
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+  /* Force table to not be like tables anymore */
+  table, thead, tbody, th, td, tr { 
+    display: block; 
+  }
+  
+  /* Hide table headers (but not display: none;, for accessibility) */
+  thead tr { 
+    position: absolute;
+  }
+  
+  tr { 
+  }
+  
+  td { 
+    border: none;
+    position: relative;
+  }
+  
+  td:before { 
+    position: absolute;
+    white-space: nowrap;
+  }
+
+}
+
+  </style>
+
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-chtml-full.min.js">
+  </script>
+
+</head>
+
+<!-- <script src="js/mobile.js"></script> -->
+
+<!-- 
+blue #2052CE
+pink #E65E6E
+green #6FDDB4
+ -->
+
+  <body>
+
+    <div class="outercontainer">
+      <div class="container" style="width: 90%;">
+        <div class="content project_title">
+          <br>
+          <h1 style="text-align: center; line-height: 1em; font-size: 2em">
+            Coherent Soft Imitation Learning
+          </h1>
+          <div>
+          </div>
+          <p style="text-align: center; font-size: 1.5em; line-height: 1.3em;">Joe Watson, Sandy H. Huang, Nicolas Heess</p>
+          <p style="text-align: center; font-size: 1.5em; line-height: 1.3em;">Advances In Neural Information Processing Systems (NeurIPS), 2023 <span style="color: var(--dmgreen)">[Spotlight]</span></p>
+        </div>
+
+        <div class="logo-container">
+        <div class="logo-row">
+          <img class="logo" src="files/dm.svg" alt="Image 1" style="margin-left: auto">
+          <img class="logo" src="files/IAS_vectorized.svg" alt="Image 2">
+          <img class="logo" src="files/tud_logo.svg" alt="Image 3" style=" margin-left: 0%; margin-right: auto; height: 4em">
+        </div>
+        </div>
+
+        <div style="text-align: center;">
+<!-- 
+        <button onclick="window.location.href='https://openreview.net/forum?id=HbGgF93Ppoy';">
+        <i class="fa-solid fa-file-pdf" style="font-size: 1.1em;"></i>
+        Paper
+        </button> -->
+
+        <button onclick="window.location.href='https://arxiv.org/abs/2305.16498">
+        <i class="ai ai-arxiv ai-4x" style="font-size: 1.1em;"></i>
+        Preprint
+        </button>
+
+        <button onclick="window.location.href='https://docs.google.com/presentation/d/1LhpmoG3533GWgOnCAj78hChi61dttbg0YV9dyONX0Tg/edit?usp=sharing&resourcekey=0-bijkff27iehDGnYdZn66GQ';">
+        <i class="fa-solid fa-person-chalkboard" style="font-size: 1.1em;"></i>
+        Slides
+        </button>
+
+        <button onclick="window.location.href='https://github.com/google-deepmind/csil';">
+         <i class="fa-brands fa-github" style="font-size: 1.1em;"></i>
+        Code
+        </button>
+
+        <button onclick="window.location.href='files/bib.txt';">
+        <i class="ai ai-google-scholar-square ai-3x" style="font-size: 1.1em;"></i>
+        Bibtex
+        </button>
+        
+        </div>
+
+        <div style="text-align: center; margin-left: auto; margin-right: auto; margin-top: 1em;">
+        <img id="csil" src="files/csil.gif" alt="csil" style="width:75%;">
+        </div>
+
+        <p style="font-size: 1.5em; text-align: center; font-style: italic;">
+          <br>
+          In imitation learning, can we learn a reward for which the behavorial-cloned policy is optimal? 
+          <br>
+        </p>
+        <p style="font-size: 1.5em; text-align: center;">
+          Using entropy-regularized RL, the policy defines this reward. We call this property coherency. 
+          </span>
+          <br><br>
+        </p>
+
+        <br>
+        <ol class ="toc-list" style="margin-top: -1em; width: 33em">
+          <li>
+          <a href='#csil'>Coherency in entropy-regularized reinforcement learning</a>
+          </li>
+          <li>
+          <a href='#hetstat'>Stationary policies in the tabular and continuous settings</a>
+          </li>
+          <li>
+          <a href='#irl'>Continuous control from agent demonstrations</a>
+          </li>
+          <li>
+          <a href='#il'>Continuous control from human demonstrations from states</a>
+          </li>
+          <li>
+          <a href='#vil'>Continuous control from human demonstrations from images</a>
+          </li>
+        </ol>
+        <br>
+        <div class="content" style="width: 100%">
+          <div class="title" id='csil'><h1>Coherency in entropy-regularized reinforcement learning</h1></div>
+          <p style="line-height: 170%; text-align: justify;">
+          
+          <span style="color: var(--dmpink)">Ng et al. 1999</span> showed that a potential function \(\Psi\) can shape a reward function without changing the optimal policy,
+          $$
+          \underbrace{r(\mathbf{s},\mathbf{a})}_{\text{True reward}} = \underbrace{\tilde{r}(\mathbf{s},\mathbf{a})}_{\text{Shaped reward}} +
+          \underbrace{\Psi(\mathbf{s}) - \gamma\,\mathbb{E}_{\mathbf{s}'\sim \mathcal{P}(\cdot\mid\mathbf{s},\mathbf{a})}[\Psi(\mathbf{s}')]}_{\text{Potential function shaping}}.
+          $$
+          $$
+          \underbrace{\mathcal{Q}(\mathbf{s},\mathbf{a})}_{\text{True critic}} = \underbrace{\tilde{\mathcal{Q}}(\mathbf{s},\mathbf{a})}_{\text{Shaped critic}} + 
+          \underbrace{\Psi(\mathbf{s})}_{\text{Potential}}.
+          $$
+
+          In entropy-regularized RL, the optimal policy take the form of a pseudo-posterior,  
+          $$
+          \underbrace{q_\alpha(\mathbf{a}\mid\mathbf{s})}_{\text{Cloned policy}} =
+          \underbrace{\exp\left(\frac{1}{\alpha}\,(\mathcal{Q}(\mathbf{s},\mathbf{a}) - \mathcal{V}_\alpha(\mathbf{s}))\right)}_{\text{Unknown advantage function}}\,
+          \underbrace{p(\mathbf{a}\mid\mathbf{s})}_{\text{Policy prior}}.
+          $$
+          Rearranging terms, we can express the critic in terms of the log policy ratio and soft value function
+          $$
+          \underbrace{\mathcal{Q}(\mathbf{s},\mathbf{a})}_{\text{Unknown critic}} =
+          \underbrace{\alpha\log\frac{q_\alpha(\mathbf{a}\mid\mathbf{s})}{p(\mathbf{a}\mid\mathbf{s})}}_{\text{Log policy ratio}}
+          +
+          \underbrace{\mathcal{V}_\alpha(\mathbf{s})}_{\text{Soft value function}}.
+          $$
+
+          Comparing this result with that of <span style="color: var(--dmpink)">Ng et al.</span>, we show that the log policy ratio is a shaped reward function,
+          $$
+          \text{Shaping theory:}
+          \quad
+          \underbrace{r(\mathbf{s},\mathbf{a})}_{\text{True reward}} = \underbrace{\tilde{r}(\mathbf{s},\mathbf{a})}_{\text{Shaped reward}} +
+          \underbrace{\Psi(\mathbf{s}) - \gamma\,\mathbb{E}_{\mathbf{s}'\sim \mathcal{P}(\cdot\mid\mathbf{s},\mathbf{a})}[\Psi(\mathbf{s}')]}_{\text{Potential function shaping}}.
+          $$
+          $$
+          \text{Coherent reward:}
+          \quad
+          \underbrace{r(\mathbf{s},\mathbf{a})}_{\text{True reward}}
+          =
+          \underbrace{\alpha\log \frac{q_\alpha(\mathbf{a}\mid\mathbf{s})}{p(\mathbf{a}\mid\mathbf{s})}}_{\text{Coherent reward}}
+          + 
+          \underbrace{\mathcal{V}_\alpha(\mathbf{s})
+          -
+          \gamma\,
+          \mathbb{E}_{\mathbf{s}'\sim \mathcal{P}(\cdot\mid\mathbf{s},\mathbf{a})}\left[\mathcal{V}_\alpha(\mathbf{s}')\right]}_{\text{Soft value function shaping}}.
+          $$
+          
+          To leverage coherency, behavioral cloning amounts to KL-regularized heteroscedastic regression, 
+          $$
+          \textstyle\max_\mathbf{\theta} \mathbb{E}_{\mathbf{a},\mathbf{s}\sim \mathcal{D}}[\log q_\mathbf{\theta}(\mathbf{a}\mid\mathbf{s})]
+          {\,-\,}
+          \lambda\,
+          \mathbb{D}_{\text{KL}}[q_\mathbf{\theta}(\mathbf{w})\mid\mid p(\mathbf{w})],
+          $$
+          $$
+          \text{ where }
+          q_\mathbf{\theta}(\mathbf{a}\mid\mathbf{s}) = \int p(\mathbf{a}\mid\mathbf{s},\mathbf{w})
+          \,
+          q_\mathbf{\theta}(\mathbf{w})
+          \,\mathrm{d}\mathbf{w},
+          \quad
+          p(\mathbf{a}\mid\mathbf{s}) = \int p(\mathbf{a}\mid\mathbf{s},\mathbf{w})
+          \,
+          p(\mathbf{w})
+          \,\mathrm{d}\mathbf{w}.
+          $$
+          </p>
+
+          <table width="100%">
+          <tbody>
+          <tr>
+            <td class="text-cell">
+                Using this regularized regression objective, the cloned policy can be used to define the shaped reward using the log policy ratio, in contrast to prior work which learn the reward using classification.
+            </td>
+            <td>
+              <img id="csil" src="files/coherent.gif" alt="csil" style="width:90%; margin-left: 5%;">
+            </td>
+          </tr>
+          </tbody>
+          </table>
+          
+          </div>
+
+
+          <div class="title" id='hetstat'>
+            <h1>Stationary policies in the tabular and continuous settings</h1>
+
+
+            <table width="100%">
+            <tbody>
+            <tr>
+              <td>
+                  <img id="csil" src="files/stationary_helper.svg" alt="hetstat" style="width:100%;">
+              </td>
+              <td class="text-cell">
+                Stationary policies are straightforward to implement in the tabular setting (left). The equivalent policy in the continuous setting (center) is harder to implement. We adopt a special neural network architecture that approximates the desired stationary behaviour (right).
+              </td>
+            </tr>
+            </tbody>
+            </table>
+
+          </div>
+          
+          <div class="title" id='irl'>
+
+            <h1>Continuous control from agent demonstrations</h1>
+
+            <table width="100%" id="videos">
+            <tr>
+            <th>
+            <iframe width="450" height="250" src="https://www.youtube.com/embed/BAGXzvavNv4" title="csil door" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </th>
+            <th>
+              <iframe width="450" height="250" src="https://www.youtube.com/embed/yfExfy9LBkw" title="iqlearn door" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </th>
+            </tr>
+            <tr>
+            <th class="video-cell">door-v0 [online, states] (csil)</th>  
+            <th class="video-cell">door-v0 [online, states] (iqlearn)</th>
+            </tr>
+            <tr>
+            <th>
+              <iframe width="450" height="250" src="https://www.youtube.com/embed/vVVLtKcsn1g" title="csil hammer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </th>
+            <th>
+              <iframe width="450" height="250" src="https://www.youtube.com/embed/QOYXtT6-Fzo" title="iqlearn hammer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </th>
+            </tr>
+            <tr>
+            <th class="video-cell">hammer-v0 [online, states] (csil)</th>  
+            <th class="video-cell">hammer-v0 [online, states] (iqlearn)</th>
+            </tr>
+            <th>
+              <iframe width="450" height="250" src="https://www.youtube.com/embed/1xxA44IfYno" title="csil offline halfcheetah" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </th>
+            <th>
+              <iframe width="450" height="250" src="https://www.youtube.com/embed/UYUkgG1tXRU" title="iqlearn offline cheetah" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </th>
+            </tr>
+            <tr>
+            <th class="video-cell">HalfCheetah-v2 [offline, states] (csil)</th>  
+            <th class="video-cell">HalfCheetah-v2 [offline, states] (iqlearn)</th>
+            </tr>
+          </table>
+
+          </div>
+
+          <div class="title" id='il'>
+
+            <h1>Continuous control from human demonstrations from states</h1>
+
+            <table width="100%" id="videos">
+            <tr>
+            <th>
+              <iframe width="450" height="250" src="https://www.youtube.com/embed/LOInW52F8pU" title="csil state lift" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </th>
+            <th>
+              <iframe width="450" height="250" src="https://www.youtube.com/embed/vSwwCZ6zglg" title="iqlearn state lift" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </th>
+            </tr>
+            <tr>
+            <th class="video-cell"> Lift [online, states] (csil)</th>  
+            <th class="video-cell"> Lift [online, states] (iqlearn)</th>
+            </tr>
+            <tr>
+            <th>
+              <iframe width="450" height="250" src="https://www.youtube.com/embed/-DXaJiIh9ow" title="csil state can" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </th>
+            <th>
+              <iframe width="450" height="250" src="https://www.youtube.com/embed/Yc3Mxnet2Ng" title="iqlearn state can" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </th>
+            </tr>
+            <tr>
+            <th class="video-cell">PickPlaceCan [online, states] (csil)</th>  
+            <th class="video-cell">PickPlaceCan [online, states] (iqlearn)</th>
+            </tr>
+            <th>
+              <iframe width="450" height="250" src="https://www.youtube.com/embed/5fs2rFchwKM" title="csil state square" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </th>
+            <th>
+              <iframe width="450" height="250" src="https://www.youtube.com/embed/UFuWsBkNP1Y" title="iqlearn state square" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </th>
+            </tr>
+            <tr>
+            <th class="video-cell">NutAssemblySquare [online, states] (csil)</th>  
+            <th class="video-cell">NutAssemblySquare [online, states] (iqlearn)</th>
+            </tr>
+          </table>
+
+          </div>
+          
+          <div class="title" id='vil'>
+            <h1>Continuous control from human demonstrations from images</h1>
+
+
+            <table width="100%" id="videos">
+            <tr>
+            <th>
+              <iframe width="450" height="250" src="https://www.youtube.com/embed/nIJXNi9trF4" title="csil lift image" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </th>
+            <th>
+              <iframe width="450" height="250" src="https://www.youtube.com/embed/egwxAQSfhhk" title="csil can image" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </th>
+            </tr>
+            <tr>
+            <th class="video-cell"> Lift [online, states] (csil)</th>  
+            <th class="video-cell"> PickPlaceCan [online, images] (csil)</th>
+            </tr>
+          </table>
+
+          </div>
+
+    </div>
+
+<br><br><br><br>  
+
+</div></body></html>

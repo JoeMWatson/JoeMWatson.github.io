@@ -1,0 +1,6 @@
+@inproceedings{Watson2023csil,
+  author    = {Watson, Joe and Huang, Sandy H. and Heess, Nicolas},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  title     = {Coherent Soft Imitation Learning},
+  year      = {2023},
+}
