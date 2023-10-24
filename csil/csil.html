@@ -61,7 +61,6 @@
     body {
         color: var(--dmblue);
         font-family: "DM Sans";
-        /*font-size: 1.5em;*/
         height:  0.1;
         letter-spacing: normal;
         text-transform: none;
@@ -73,7 +72,6 @@
     h1, h2 {
         font-family: "DM Sans";
         font-size: 1.5em;
-        line-height: 2em;
         padding-bottom: 0.5em;
         height:  0.1;
         letter-spacing: normal;
@@ -89,16 +87,16 @@
     h1 {
         color: var(--dmblue);
         font-size: 1.75em;
-        line-height: 2em;
+/*        line-height: 2em;*/
     }
     p {
     font-family: 'Crimson Text', "Recession TwentySeventeen", "Palatino Linotype", "Book Antiqua", Palatino, FreeSerif, serif;
     color: #000000;
-    text-align: left;
+    text-align: justify;
     font-style: regular;
     font-weight: normal;
     font-size: 1.5em;
-    line-height: 1.5em;
+    line-height: 1.2em;
     }
 
     .text-cell {
@@ -115,7 +113,6 @@
       font-family: 'Roboto Mono';
       color: var(--dmgreen);
       font-size: 1.1em;
-/*      line-height : 2em;*/
       text-align: center;
       font-style: regular;
       font-weight: normal;
@@ -130,11 +127,7 @@
 
     td {
       text-align: left;
-/*      box-sizing:border-box;*/
-/*      display:block;*/
       width:40%;
-/*      margin-left: auto;*/
-/*      margin-right: auto;*/
     }
 
     tr {
@@ -177,6 +170,44 @@
       transform: translateX(12.5%);
     }
 
+    .video-row {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+
+    .video-column {
+      display: flex;
+      flex-direction: column;
+      flex-basis: 100%;
+      flex: 1;
+    }
+
+    .responsive-iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .iframe-container {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 aspect ratio (9 / 16 * 100%) */
+        overflow: hidden;
+    }
+
+    .iframe-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
     a {
       color: inherit;
       text-decoration: inherit;
@@ -186,9 +217,7 @@
     }
 
     .link {
-      /*color: #0066CC;*/
       color: #bb2222;
-      /*color: #882222;*/
       text-decoration: none;
     }
     .link:hover {
@@ -261,6 +290,10 @@ and also iPads specifically.
 only screen and (max-width: 760px),
 (min-device-width: 768px) and (max-device-width: 1024px)  {
 
+  p {
+    text-align: justify;
+  }
+
   /* Force table to not be like tables anymore */
   table, thead, tbody, th, td, tr { 
     display: block; 
@@ -277,12 +310,25 @@ only screen and (max-width: 760px),
   td { 
     border: none;
     position: relative;
+    text-align: justify;
+    width:100%;
   }
   
   td:before { 
     position: absolute;
     white-space: nowrap;
   }
+
+  .text-cell {
+    font-family: 'Crimson Text', serif;
+    color: #000000;
+    text-align: left;
+    font-style: regular;
+    font-weight: normal;
+    font-size: 1.5em;
+    line-height: 1.5em;
+    display: block; 
+    }
 
 }
 
@@ -293,14 +339,6 @@ only screen and (max-width: 760px),
   </script>
 
 </head>
-
-<!-- <script src="js/mobile.js"></script> -->
-
-<!-- 
-blue #2052CE
-pink #E65E6E
-green #6FDDB4
- -->
 
   <body>
 
@@ -314,19 +352,20 @@ green #6FDDB4
           <div>
           </div>
           <p style="text-align: center; font-size: 1.5em; line-height: 1.3em;">Joe Watson, Sandy H. Huang, Nicolas Heess</p>
-          <p style="text-align: center; font-size: 1.5em; line-height: 1.3em;">Advances In Neural Information Processing Systems (NeurIPS), 2023 <span style="color: var(--dmgreen)">[Spotlight]</span></p>
+          <p style="text-align: center; font-size: 1.25em; line-height: 1.3em;"><b>Advances In Neural Information Processing Systems</b> (NeurIPS), 2023<span style="color: var(--dmgreen)"> [Spotlight]</span></p>
         </div>
 
         <div class="logo-container">
         <div class="logo-row">
-          <img class="logo" src="files/dm.svg" alt="Image 1" style="margin-left: auto">
-          <img class="logo" src="files/IAS_vectorized.svg" alt="Image 2">
-          <img class="logo" src="files/tud_logo.svg" alt="Image 3" style=" margin-left: 0%; margin-right: auto; height: 4em">
+          <a href="https://www.deepmind.com" style="margin-left: auto; margin-right: 1%"><img class="logo" src="files/dm.svg" alt="Image 1"></a>
+          <a href="https://www.ias.informatik.tu-darmstadt.de"><img class="logo" src="files/IAS_vectorized.svg" alt="Image 2"></a>
+          <a href="https://www.tu-darmstadt.de/" style="margin-left: 0%; margin-right: auto;"><img class="logo" src="files/tud_logo.svg" alt="Image 3" style="height: 4em"></a>
         </div>
         </div>
 
         <div style="text-align: center;">
-<!-- 
+
+<!--    add when open review is back
         <button onclick="window.location.href='https://openreview.net/forum?id=HbGgF93Ppoy';">
         <i class="fa-solid fa-file-pdf" style="font-size: 1.1em;"></i>
         Paper
@@ -361,16 +400,16 @@ green #6FDDB4
         <p style="font-size: 1.5em; text-align: center; font-style: italic;">
           <br>
           In imitation learning, can we learn a reward for which the behavorial-cloned policy is optimal? 
-          <br>
+          <br><br>
         </p>
         <p style="font-size: 1.5em; text-align: center;">
-          Using entropy-regularized RL, the policy defines this reward. We call this property coherency. 
+          Using entropy-regularized RL, the policy defines this reward. We call this property <em>coherency</em>. 
           </span>
           <br><br>
         </p>
 
         <br>
-        <ol class ="toc-list" style="margin-top: -1em; width: 33em">
+        <ol class ="toc-list" style="margin-top: -1em; width: min(100%, 33em); text-align: left;">
           <li>
           <a href='#csil'>Coherency in entropy-regularized reinforcement learning</a>
           </li>
@@ -392,7 +431,7 @@ green #6FDDB4
           <div class="title" id='csil'><h1>Coherency in entropy-regularized reinforcement learning</h1></div>
           <p style="line-height: 170%; text-align: justify;">
           
-          <span style="color: var(--dmpink)">Ng et al. 1999</span> showed that a potential function \(\Psi\) can shape a reward function without changing the optimal policy,
+          <a href="https://people.eecs.berkeley.edu/~pabbeel/cs287-fa09/readings/NgHaradaRussell-shaping-ICML1999.pdf" style="color: var(--dmpink)">Ng et al. 1999</a> showed that a potential function \(\Psi\) can shape a reward function without changing the optimal policy,
           $$
           \underbrace{r(\mathbf{s},\mathbf{a})}_{\text{True reward}} = \underbrace{\tilde{r}(\mathbf{s},\mathbf{a})}_{\text{Shaped reward}} +
           \underbrace{\Psi(\mathbf{s}) - \gamma\,\mathbb{E}_{\mathbf{s}'\sim \mathcal{P}(\cdot\mid\mathbf{s},\mathbf{a})}[\Psi(\mathbf{s}')]}_{\text{Potential function shaping}}.
@@ -489,6 +528,7 @@ green #6FDDB4
             </tr>
             </tbody>
             </table>
+            <br>
 
           </div>
           
@@ -496,109 +536,127 @@ green #6FDDB4
 
             <h1>Continuous control from agent demonstrations</h1>
 
-            <table width="100%" id="videos">
-            <tr>
-            <th>
-            <iframe width="450" height="250" src="https://www.youtube.com/embed/BAGXzvavNv4" title="csil door" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </th>
-            <th>
-              <iframe width="450" height="250" src="https://www.youtube.com/embed/yfExfy9LBkw" title="iqlearn door" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </th>
-            </tr>
-            <tr>
-            <th class="video-cell">door-v0 [online, states] (csil)</th>  
-            <th class="video-cell">door-v0 [online, states] (iqlearn)</th>
-            </tr>
-            <tr>
-            <th>
-              <iframe width="450" height="250" src="https://www.youtube.com/embed/vVVLtKcsn1g" title="csil hammer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </th>
-            <th>
-              <iframe width="450" height="250" src="https://www.youtube.com/embed/QOYXtT6-Fzo" title="iqlearn hammer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </th>
-            </tr>
-            <tr>
-            <th class="video-cell">hammer-v0 [online, states] (csil)</th>  
-            <th class="video-cell">hammer-v0 [online, states] (iqlearn)</th>
-            </tr>
-            <th>
-              <iframe width="450" height="250" src="https://www.youtube.com/embed/1xxA44IfYno" title="csil offline halfcheetah" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </th>
-            <th>
-              <iframe width="450" height="250" src="https://www.youtube.com/embed/UYUkgG1tXRU" title="iqlearn offline cheetah" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </th>
-            </tr>
-            <tr>
-            <th class="video-cell">HalfCheetah-v2 [offline, states] (csil)</th>  
-            <th class="video-cell">HalfCheetah-v2 [offline, states] (iqlearn)</th>
-            </tr>
-          </table>
+            <div class="video-table">
+              <div class="video-row">
+                <div class="video-column">
+                  <div class="iframe-container">
+                    <iframe width="450" height="250" src="https://www.youtube.com/embed/BAGXzvavNv4" frameborder="0" ></iframe>
+                  </div>
+                  <div class="video-cell">door-v0 [online, states] (csil)</div>
+                </div>
+                <div class="video-column">
+                  <div class="iframe-container">
+                    <iframe width="450" height="250" src="https://www.youtube.com/  embed/BAGXzvavNv4" frameborder="0" ></iframe>
+                  </div>
+                  <div class="video-cell">door-v0 [online, states] (iqlearn)</div>
+                </div>
+              </div>
 
-          </div>
+              <div class="video-row">
+                <div class="video-column">
+                  <div class="iframe-container">
+                    <iframe width="450" height="250" src="https://www.youtube.com/embed/vVVLtKcsn1g" title="csil hammer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                  </div>
+                  <div class="video-cell">hammer-v0 [online, states] (csil)</div>
+                </div>
+                <div class="video-column">
+                  <div class="iframe-container">
+                     <iframe width="450" height="250" src="https://www.youtube.com/embed/QOYXtT6-Fzo" title="iqlearn hammer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                  </div>
+                  <div class="video-cell">hammer-v0 [online, states] (iqlearn)</div>
+                </div>
+              </div>
+
+              <div class="video-row">
+                <div class="video-column">
+                  <div class="iframe-container">
+                     <iframe width="450" height="250" src="https://www.youtube.com/embed/1xxA44IfYno" title="csil offline halfcheetah" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                  </div>
+                  <div class="video-cell">HalfCheetah-v2 [offline, states] (csil)</div>
+                </div>
+                <div class="video-column">
+                  <div class="iframe-container">
+                     <iframe width="450" height="250" src="https://www.youtube.com/embed/UYUkgG1tXRU" title="iqlearn offline cheetah" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                  </div>
+                   <div class="video-cell">HalfCheetah-v2 [offline, states] (iqlearn)</div>
+                </div>
+              </div>
+            </div>
 
           <div class="title" id='il'>
 
             <h1>Continuous control from human demonstrations from states</h1>
 
-            <table width="100%" id="videos">
-            <tr>
-            <th>
-              <iframe width="450" height="250" src="https://www.youtube.com/embed/LOInW52F8pU" title="csil state lift" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </th>
-            <th>
-              <iframe width="450" height="250" src="https://www.youtube.com/embed/vSwwCZ6zglg" title="iqlearn state lift" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </th>
-            </tr>
-            <tr>
-            <th class="video-cell"> Lift [online, states] (csil)</th>  
-            <th class="video-cell"> Lift [online, states] (iqlearn)</th>
-            </tr>
-            <tr>
-            <th>
-              <iframe width="450" height="250" src="https://www.youtube.com/embed/-DXaJiIh9ow" title="csil state can" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </th>
-            <th>
-              <iframe width="450" height="250" src="https://www.youtube.com/embed/Yc3Mxnet2Ng" title="iqlearn state can" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </th>
-            </tr>
-            <tr>
-            <th class="video-cell">PickPlaceCan [online, states] (csil)</th>  
-            <th class="video-cell">PickPlaceCan [online, states] (iqlearn)</th>
-            </tr>
-            <th>
-              <iframe width="450" height="250" src="https://www.youtube.com/embed/5fs2rFchwKM" title="csil state square" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </th>
-            <th>
-              <iframe width="450" height="250" src="https://www.youtube.com/embed/UFuWsBkNP1Y" title="iqlearn state square" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </th>
-            </tr>
-            <tr>
-            <th class="video-cell">NutAssemblySquare [online, states] (csil)</th>  
-            <th class="video-cell">NutAssemblySquare [online, states] (iqlearn)</th>
-            </tr>
-          </table>
 
-          </div>
+            <div class="video-table">
+              <div class="video-row">
+                <div class="video-column">
+                  <div class="iframe-container">
+                    <iframe width="450" height="250" src="https://www.youtube.com/embed/LOInW52F8pU" title="csil state lift" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                  </div>
+                  <div class="video-cell"> Lift [online, states] (csil)</div>  
+                </div>
+                <div class="video-column">
+                  <div class="iframe-container">
+                    <iframe width="450" height="250" src="https://www.youtube.com/embed/vSwwCZ6zglg" title="iqlearn state lift" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                  </div>
+                  <div class="video-cell"> Lift [online, states] (iqlearn)</div>
+                </div>
+              </div>
+
+              <div class="video-row">
+                <div class="video-column">
+                  <div class="iframe-container">
+                    <iframe width="450" height="250" src="https://www.youtube.com/embed/-DXaJiIh9ow" title="csil state can" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                  </div>
+                  <div class="video-cell">PickPlaceCan [online, states] (csil)</div>
+                </div>
+                <div class="video-column">
+                  <div class="iframe-container">
+                     <iframe width="450" height="250" src="https://www.youtube.com/embed/Yc3Mxnet2Ng" title="iqlearn state can" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                  </div>
+                   <div class="video-cell">PickPlaceCan [online, states] (iqlearn)</div>
+                </div>
+              </div>
+            
+
+              <div class="video-row">
+                <div class="video-column">
+                  <div class="iframe-container">
+                    <iframe width="450" height="250" src="https://www.youtube.com/embed/5fs2rFchwKM" title="csil state square" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                  </div>
+                  <div class="video-cell">NutAssemblySquare [online, states] (csil)</div>  
+                </div>
+                <div class="video-column">
+                  <div class="iframe-container">
+                     <iframe width="450" height="250" src="https://www.youtube.com/embed/UFuWsBkNP1Y" title="iqlearn state square" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                  </div>
+                  <div class="video-cell">NutAssemblySquare [online, states] (iqlearn)</div>
+                </div>
+              </div>
+
+            </div>
           
           <div class="title" id='vil'>
             <h1>Continuous control from human demonstrations from images</h1>
 
+            <div class="video-table">
+              <div class="video-row">
+                <div class="video-column">
+                  <div class="iframe-container">
+                    <iframe width="450" height="250" src="https://www.youtube.com/embed/nIJXNi9trF4" title="csil lift image" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                  </div>
+                  <div class="video-cell"> Lift [online, images] (csil)</div>   
+                </div>
+                <div class="video-column">
+                  <div class="iframe-container">
+                    <iframe width="450" height="250" src="https://www.youtube.com/embed/egwxAQSfhhk" title="csil can image" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                  </div>
+                  <div class="video-cell"> PickPlaceCan [online, images] (csil)</div>
+                </div>
+              </div>
 
-            <table width="100%" id="videos">
-            <tr>
-            <th>
-              <iframe width="450" height="250" src="https://www.youtube.com/embed/nIJXNi9trF4" title="csil lift image" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </th>
-            <th>
-              <iframe width="450" height="250" src="https://www.youtube.com/embed/egwxAQSfhhk" title="csil can image" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </th>
-            </tr>
-            <tr>
-            <th class="video-cell"> Lift [online, states] (csil)</th>  
-            <th class="video-cell"> PickPlaceCan [online, images] (csil)</th>
-            </tr>
-          </table>
-
+            </div>
           </div>
 
     </div>
