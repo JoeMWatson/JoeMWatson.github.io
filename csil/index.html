@@ -72,6 +72,7 @@
     h1, h2 {
         font-family: "DM Sans";
         font-size: 1.5em;
+        line-height: 1.25em;
         padding-bottom: 0.5em;
         height:  0.1;
         letter-spacing: normal;
@@ -87,26 +88,25 @@
     h1 {
         color: var(--dmblue);
         font-size: 1.75em;
-/*        line-height: 2em;*/
     }
     p {
-    font-family: 'Crimson Text', "Recession TwentySeventeen", "Palatino Linotype", "Book Antiqua", Palatino, FreeSerif, serif;
-    color: #000000;
-    text-align: justify;
-    font-style: regular;
-    font-weight: normal;
-    font-size: 1.5em;
-    line-height: 1.2em;
+      font-family: 'Crimson Text', "Recession TwentySeventeen", "Palatino Linotype", "Book Antiqua", Palatino, FreeSerif, serif;
+      color: #000000;
+      text-align: justify;
+      font-style: regular;
+      font-weight: normal;
+      font-size: 1.5em;
+      line-height: 1.25em;
     }
 
     .text-cell {
-    font-family: 'Crimson Text', serif;
-    color: #000000;
-    text-align: left;
-    font-style: regular;
-    font-weight: normal;
-    font-size: 1.5em;
-    line-height: 1.5em;
+      font-family: 'Crimson Text', serif;
+      color: #000000;
+      text-align: left;
+      font-style: regular;
+      font-weight: normal;
+      font-size: 1.5em;
+      line-height: 1.25em;
     }
 
     .video-cell {
@@ -141,18 +141,18 @@
     }
 
     button {
-    display:inline-block;
-    text-decoration:none;
-    color:var(--dmpink);
-    font-weight:bold;
-    min-width:132px;
-    min-height:37px;
-    border:1px solid black;
-    border-radius:12px;
-    text-align:center;
-    border-color: var(--dmpink);
-    /*background-color:gray;*/
-    margin:10px;
+      display:inline-block;
+      text-decoration:none;
+      color:var(--dmpink);
+      font-weight:bold;
+      min-width:132px;
+      min-height:37px;
+      border:1px solid black;
+      border-radius:12px;
+      text-align:center;
+      border-color: var(--dmpink);
+      /*background-color:gray;*/
+      margin:10px;
     }
 
     * {padding:0;margin:0;box-sizing:border-box;}
@@ -292,6 +292,8 @@ only screen and (max-width: 760px),
 
   p {
     text-align: justify;
+    font-size: 1.5em;
+    line-height: 1.25em;
   }
 
   /* Force table to not be like tables anymore */
@@ -326,7 +328,7 @@ only screen and (max-width: 760px),
     font-style: regular;
     font-weight: normal;
     font-size: 1.5em;
-    line-height: 1.5em;
+    line-height: 1.25em;
     display: block; 
     }
 
@@ -429,7 +431,7 @@ only screen and (max-width: 760px),
         <br>
         <div class="content" style="width: 100%">
           <div class="title" id='csil'><h1>Coherency in entropy-regularized reinforcement learning</h1></div>
-          <p style="line-height: 170%; text-align: justify;">
+          <p>
           
           <a href="https://people.eecs.berkeley.edu/~pabbeel/cs287-fa09/readings/NgHaradaRussell-shaping-ICML1999.pdf" style="color: var(--dmpink)">Ng et al. 1999</a> showed that a potential function \(\Psi\) can shape a reward function without changing the optimal policy,
           $$
